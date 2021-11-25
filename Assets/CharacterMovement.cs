@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     public Rigidbody rb;
-    public float accel = 400.0F;
+    public float accel = 600.0F;
     public float maxSpeed = 2.0F;
     public float rotateSpeed = 2.0F;
     public Animator anim;
@@ -39,9 +39,9 @@ public class CharacterMovement : MonoBehaviour
         //rotate
         transform.Rotate(0, Input.GetAxis("Horizontal")*rotateSpeed, 0);
 
-        if (vel.magnitude > maxSpeed)
+        if (vel.magnitude > speed)
         {
-            rb.velocity = vel.normalized * maxSpeed;
+            rb.velocity = vel.normalized * speed;
         }
 
         //chodzenie/bieganie
